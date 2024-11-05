@@ -1,0 +1,77 @@
+Lab 1
+CPI
+ 
+Alphabet: 
+Upper/lower case letter: 'A' …'Z' and 'a' … 'z' 
+Decimaldigits: '0' … '9' 
+Underline character : '_' 
+
+Lexical stuff: 
+Op Arithmetic: '+' , '-' , '*' , '/' , '//' '^', '%', '='   
+Op Relational : '<', '<=' , '==', '!=' , '>=', '>'  
+Op Logical : '&&', '||',  '!' 
+Separators : '[' , ']', '{' , '}' , '(' , ')' , ';', ',' , ' ' (space) , '/*' 
+Reserved_keywords: 'if', 'else', 'int', 'float', 'char', 'input', 'output', 'const' , 'do', 'while', 'struct' 
+ 
+
+Identifier::= l[c] 
+L ::= '_'|Letter 
+Character ::= letter|digit 
+Letter ::= 'A'|'B'|…|'Z'|'a'|'b'|…|'z'| 
+Digit::= '0'|'1'|…|'9'| 
+Integer Constants:  int const ::= ['+'|'-'] Digits 
+Digits::= Digit|Nonzero-digit Digits 
+Nonzero-digit ::= '1'|'2'|…|'9'| 
+Floating Point (Real) Constants: 
+float const ::= ['+'|'-'] Digits '.' Digits 
+Digits ::= Digit|Nonzero-digit Digits 
+char_const := 'Letter'|'Digit' 
+Letter ::= 'A'|'B'|…|'Z'|'a'|'b'|…|'z'| 
+Digit ::= '0'|'1'|…|'9'| 
+string_const ::= "String" 
+String ::= C[String] 
+C::= Letter|Digit 
+
+
+Syntax:
+Program ::= Statement_List 
+Statement_List ::= Statement ";" | Statement ";" Statement_List 
+Statement ::= Declaration | Assignment |IO_Statement| If_Statement |  While_Statement | Struct_Statement ';' 
+Declaration ::= Type Identifier_List ';' | Array_Declaration ';' 
+Array_Declaration ::= Type Identifier '['Dimension']' [','Identifier'['Dimension']'] ';' 
+Type ::= 'int'| 'float' | 'char' 
+Identifier_List ::= Identifier[',' Identifier] 
+Dimension ::= '[' size ']' | '[' size ']' [ '[' size ']' ] 
+Size ::= Digits 
+Assignment ::= Identifier '=' Expression ';' 
+Expression ::= Expression Opm1 Term | Term 
+Term ::= Term Opm2 Factor | Factor 
+Factor ::= '(' expression ')' | Identifier 
+Opm1 = '+' | '-' 
+Opm2 = '*' | '/' | '//' | '%'  
+IO_Statement ::= "input(" Identifier ");" | "output(" Identifier ");" 
+If_Statement ::= "if(" Condition "){" Statement-List "}"  ["else{" Statement-List "}" ] ";" 
+While_Statement ::= "while(" Condition "){" Statement-List "}" 
+Condition ::= Expression MathlOPcomp Expression  
+MathOPcomp ::=  '<', '<=' , '==', '!=' , '>=', '>' , '&&', '||',  '!' 
+Struct_Statement ::= "struct" identifier '{' Declaration [Declaration] "};" 
+
+
+
+
+2. 
+ 
+
+int nr; 
+input(nr); 
+int d;
+d=2;
+if( nr<=2 ){ output("neprim" ); }
+else{ while(nr%d !=0 && d<nr); 
+	d=d+1;  
+	};
+};	
+ouput(d); 
+ 
+
+ 
