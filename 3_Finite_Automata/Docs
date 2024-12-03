@@ -1,0 +1,11 @@
+<letter> ::= "a".."z"
+<capsletter> ::= "A".."Z"
+<digit> ::= "0".."9"
+<ssymbol>::=" "
+<esymbol>::="_"
+<symbol>::=<ssymbol>|<esymbol>|<letter>|<digit>
+state::=<capsletter>{<letter>*|<digit>*}}*
+<transition> ::=<state><symbol><state>
+<sttransition>::=<state><ssymbol><state>
+<etransition>::=<state><esymbol><state>
+<string>:=<stransition><transition>*<etransition>
